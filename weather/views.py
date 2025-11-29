@@ -8,8 +8,8 @@ class CurrentWeatherView(DetailView):
     template_name = "current/current_weather.html"
     context_object_name = "current"
     queryset = CurrentWeatherModel.objects.all()
-    lookup_field = 'dt'
-    slug = 'dt'
+    slug_field = 'dt'
+    slug_url_kwarg = 'dt'
 
 class DailyWeatherView(TemplateView):
     template_name = "daily_weather.html"

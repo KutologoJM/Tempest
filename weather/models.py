@@ -1,4 +1,6 @@
+from datetime import datetime
 from django.db import models
+
 
 # Create your models here.
 
@@ -23,3 +25,15 @@ class CurrentWeatherModel(models.Model):
     weather_main = models.CharField(max_length=120) # name of weather event
     weather_description = models.CharField(max_length=200)
     weather_icon = models.URLField() # link to weather event icon
+
+    @property
+    def human_readable_datetime(self):
+        return datetime.fromtimestamp(self.dt).strftime("%H:%M")
+
+    @property
+    def human_readable_sunrise(self):
+        return datetime.fromtimestamp(self.sunrise).strftime("%H:%M")
+
+    @property
+    def human_readable_sunset(self):
+        return datetime.fromtimestamp(self.sunset).strftime("%H:%M")
