@@ -49,6 +49,7 @@ THIRD_PARTY_APPS = [
 
 LOCAL_APPS = [
     'accounts.apps.AccountsConfig',
+    'weather.apps.WeatherConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
@@ -121,6 +122,8 @@ TIME_ZONE = 'Asia/Manila'
 USE_I18N = True
 
 USE_TZ = True
+
+APPEND_SLASH = True
 
 # Static files (CSS, JavaScript, Images)
 

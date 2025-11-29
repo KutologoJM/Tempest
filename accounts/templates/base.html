@@ -1,7 +1,9 @@
 {% load static %}
 <!doctype html>
-<html lang="en" data-theme="solar">
+<html lang="en" data-theme="lunar">
 <head>
+    <link href="{% static "css/output.css" %}" rel="stylesheet" type="text/css"/>
+
     <script src="https://kit.fontawesome.com/f23e4a7e43.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -13,7 +15,7 @@
           minimum-scale=1.0
            ">
     <title> {% block title %} Tempest {% endblock %}</title>
-    <link href="{% static "css/output.css" %}" rel="stylesheet" type="text/css"/>
+    <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
     {% block extra_head_element %} {% endblock %}
 </head>
 <body class="min-h-screen grid grid-rows-[auto_1fr_auto]">
