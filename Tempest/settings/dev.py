@@ -22,3 +22,15 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+
+MARTOR_ENABLE_CONFIGS = {
+    'emoji': 'true',
+    'imgur': 'true',
+    'mention': 'true',
+    'jquery': 'true',
+    'living': 'true',     # Enable for immediate feedback
+    'spellcheck': 'true', # Enable for writing assistance
+    'hljs': 'true',
+}
+
+MARTOR_MARKDOWNIFY_TIMEOUT = 0  # Instant updates
