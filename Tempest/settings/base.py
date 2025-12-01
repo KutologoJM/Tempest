@@ -44,18 +44,20 @@ DJANGO_APPS = [
 ]
 
 THIRD_PARTY_APPS = [
-    "whitenoise"
+    "whitenoise",
+    "martor"
 ]
 
 LOCAL_APPS = [
     'accounts.apps.AccountsConfig',
     'weather.apps.WeatherConfig',
+    'documentation.apps.DocumentationConfig',
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
 # New Default User
-AUTH_USER_MODEL = 'accounts.CustomUser' # noqa
+AUTH_USER_MODEL = 'accounts.CustomUser'  # noqa
 
 # Project Middleware
 
@@ -130,8 +132,78 @@ APPEND_SLASH = True
 STATIC_URL = "/static/"
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")  # noqa
 STATICFILES_DIRS = [
-    BASE_DIR / "static", # noqa
+    BASE_DIR / "static",  # noqa
 ]
 
 # Whitenoise config
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
+# Martor Settings - -------------------------------------
+
+# Choose your preferred theme: "bootstrap" or "semantic"
+MARTOR_THEME = 'bootstrap'  # Default
+
+# CSRF token configuration (required for AJAX uploads)
+CSRF_COOKIE_HTTPONLY = False
+
+MARTOR_ENABLE_CONFIGS = {
+    'emoji': 'true',        # Enable/disable emoji icons
+    'imgur': 'false',        # Enable/disable imgur/custom uploader
+    'mention': 'false',     # Enable/disable user mentions
+    'jquery': 'true',       # Include/exclude jQuery (required for admin)
+    'living': 'true',      # Enable/disable live preview updates
+    'spellcheck': 'true',  # Enable/disable spellcheck
+    'hljs': 'true',         # Enable/disable syntax highlighting
+}
+
+MARTOR_TOOLBAR_BUTTONS = [
+    'bold',                # Bold text button
+    'italic',              # Italic text button
+    'horizontal',          # Horizontal rule
+    'heading',             # Heading dropdown
+    'pre-code',           # Code block button
+    'blockquote',         # Blockquote button
+    'unordered-list',     # Bullet list
+    'ordered-list',       # Numbered list
+    'link',               # Link insertion
+    'image-link',         # Image by URL
+    'image-upload',       # Image upload (requires imgur/custom uploader)
+    'emoji',              # Emoji picker
+    'direct-mention',     # User mention
+    'toggle-maximize',    # Fullscreen toggle
+    'help'                # Help/guide modal
+]
+
+MARTOR_ENABLE_LABEL = True   # Show field labels
+
+MARTOR_MARKDOWNIFY_TIMEOUT = 1000  # Default: 1 second
+
+MARTOR_MARKDOWNIFY_FUNCTION = 'martor.utils.markdownify'  # Default
+
+MARTOR_MARKDOWNIFY_URL = '/martor/markdownify/'  # Default
+
+MARTOR_MARKDOWN_EXTENSIONS = [
+    # Standard Python Markdown extensions
+    'markdown.extensions.extra',
+    'markdown.extensions.nl2br',
+    'markdown.extensions.smarty',
+    'markdown.extensions.fenced_code',
+    'markdown.extensions.sane_lists',
+
+    # Martor custom extensions
+    'martor.extensions.urlize',       # Auto-link URLs
+    'martor.extensions.del_ins',      # ~~strikethrough~~ and ++underline++
+    'martor.extensions.mention',      # @[username] mentions
+    'martor.extensions.emoji',        # :emoji_name: support
+    'martor.extensions.mdx_video',    # Video embedding
+    'martor.extensions.escape_html',  # XSS protection
+    'martor.extensions.mdx_add_id',   # Custom ID attributes {#id}
+]
+
+# Default: GitHub emoji
+MARTOR_MARKDOWN_BASE_EMOJI_URL = 'https://github.githubassets.com/images/icons/emoji/'
+
+# Custom themed CSS file
+#MARTOR_ALTERNATIVE_CSS_FILE_THEME = 'Tempest/static/css/output.css'
+
+MARTOR_ENABLE_ADMIN_CSS = False

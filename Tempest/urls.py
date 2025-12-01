@@ -23,8 +23,10 @@ import accounts
 urlpatterns = [
 
     path('admin/', admin.site.urls),
+    path("martor/", include("martor.urls")),
     path('accounts/', include("accounts.urls")),
     path('weather/', include("weather.urls")),
+    path("docs/", include("documentation.urls"))
 ]
 
 if settings.DEBUG:
