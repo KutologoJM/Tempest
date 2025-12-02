@@ -1,0 +1,64 @@
+{% extends "base.html" %}
+{% block title %}Login{% endblock %}
+{% block extra_head_element %} {% endblock %}
+{% block navbar_title %}Login Page{% endblock %}
+
+{% block page_content %}
+
+    {% if form.errors %}
+        <div role="alert" class="alert alert-error w-xs p-4 mb-4">
+            <i class="fa-regular fa-circle-xmark"></i>
+            <span>Invalid username or password. Please try again.</span>
+        </div>
+    {% endif %}
+
+    <form class="fieldset bg-base-100 border-base-300 w-xs rounded-box border p-4" action="#" method="post">
+        {% csrf_token %}
+        <legend class="fieldset-legend">Login</legend>
+
+        <fieldset class="fieldset">
+            <label for="id_username" class="input validator">
+                <i class="fa-regular fa-user"></i>
+                <input
+                        type="text"
+                        id="id_username"
+                        name="username"
+                        required
+                        placeholder="Username"
+                        autocomplete="Username"
+                >
+            </label>
+            <p class="validator-hint hidden">
+                Username cannot be empty!
+            </p>
+        </fieldset>
+
+        <fieldset class="fieldset">
+            <label for="id_password" class="input validator">
+                <i class="fa-solid fa-key"></i>
+                <input
+                        type="password"
+                        id="id_password"
+                        name="password"
+                        required
+                        placeholder="password"
+                        autocomplete="current-password"
+                >
+            </label>
+            <p class="validator-hint hidden">
+                Password cannot be empty!
+            </p>
+        </fieldset>
+
+        <button class="btn btn-secondary" type="submit">
+            Sign In
+        </button>
+
+
+    </form>
+
+
+
+{% endblock %}
+
+{% block extra_scripts %}{% endblock %}

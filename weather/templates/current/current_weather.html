@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% block title %}Weather{% endblock %}
+{% block extra_head_element %} {% endblock %}
+{% block navbar_title %}Current Weather Forecast{% endblock %}
+
+
+{% block page_content %}
+    <div class="card bg-base-200 w-96 shadow-sm font-serif">
+        <div class="grid grid-cols-2 gap-2 p-4">
+            <h1 class="text-5xl font-bold col-end-2 content-center text-center">
+                27°C
+            </h1>
+            <img src="{{ current.weather_icon }}"/>
+        </div>
+
+        <p class="text-2xl font-bold text-center">
+            Cebu City
+            <br>
+            {{ current.weather_description }}
+            <br>
+            Feels like {{ current.feels_like }}°C
+            <br>
+            Updated at {{ current.human_readable_datetime }}
+        </p>
+    </div>
+
+
+
+    <div class="stats shadow bg-base-200 p-2 mt-4">
+
+        <div class="stat">
+            <div class="stat-figure text-primary">
+                <i class="fa-solid fa-sun fa-2xl"></i>
+            </div>
+            <div class="stat-title">
+                UV Index
+            </div>
+            <div class="stat-value">
+                {{ current.uv_index }}
+            </div>
+
+        </div>
+        <div class="stat">
+            <div class="stat-figure">
+                <i class="fa-solid fa-droplet fa-2xl"></i></div>
+            <div class="stat-title">Humidity</div>
+            <div class="stat-value">{{ current.humidity }}</div>
+        </div>
+        <div class="stat">
+            <div class="stats bg-base-100 w-full">
+
+                <div class="stat">
+                    <div class="stat-figure">
+                        <i class="fa-regular fa-sun fa-2xl"></i>
+                    </div>
+                    <div class="stat-title">Sunrise</div>
+                    <div class="stat-value">05:30</div>
+                </div>
+
+                <div class="stat">
+                    <div class="stat-figure">
+                        <i class="fa-regular fa-moon fa-2xl"></i>
+                    </div>
+                    <div class="stat-title">Sunset</div>
+                    <div class="stat-value">18:40</div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+
+{% block extra_scripts %}{% endblock %}

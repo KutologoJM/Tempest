@@ -148,3 +148,12 @@ do_not_commit.html
 # Temporary
 # -------------------
 Tempest/old_settings.py
+
+
+# Dependency directories
+node_modules/
+
+# Build directories
+dist
+build
+/Tempest/static/css/tailwindcss
