@@ -1,8 +1,6 @@
 from . import views
 from django.urls import path
 
-from .views import AppDocView
-
 urlpatterns = [
-    path("", AppDocView.as_view(), name="app_documentation"),
+    path('<path:doc_path>/', views.render_md_docs, name='doc_render'),
 ]

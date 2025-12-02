@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Documentation{% endblock %}
+{% block extra_head_element %} {% endblock %}
+{% block navbar_title %}Documentation Page{% endblock %}
+{% block page_content %}
+    <div class="prose lg:prose-xl">
+        {{ html|safe }}
+    </div>
+{% endblock %}
+{% block extra_scripts %}{% endblock %}
