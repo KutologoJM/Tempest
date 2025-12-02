@@ -1,10 +1,10 @@
-from django.views.generic import ListView
+from django.shortcuts import render
+import markdown
+from django.conf import settings
 
-from .models import AppDoc
 
-
-class AppDocView(ListView):
-    template_name = "app_documentation/test_app.html"
-    model = AppDoc
-    context_object_name = "app_docs"
-    queryset = AppDoc.objects.all()
+def render_md_docs(request, doc_path):
+    project_root = settings.PROJECT_ROOT
+    doc_path = open(f"{project_root}/documentation/templates/docs/{doc_path}.md").read() # TODO check if vulnerable to path traversal
+    html = markdown.markdown(doc_path, extensions=["fenced_code", "tables"])
+    return render(request, "rendered_md.html", {"html": html})
