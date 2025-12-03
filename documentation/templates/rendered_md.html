@@ -1,10 +1,39 @@
-{% extends "base.html" %}
-{% block title %}Documentation{% endblock %}
-{% block extra_head_element %} {% endblock %}
-{% block navbar_title %}Documentation Page{% endblock %}
-{% block page_content %}
-    <div class="prose lg:prose-xl">
-        {{ html|safe }}
-    </div>
-{% endblock %}
-{% block extra_scripts %}{% endblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="lunar">
+<head>
+    <link href="{% static "css/output.css" %}" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+    <meta charset="UTF-8">
+    <title>Documentation Root</title>
+    <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
+
+    <style>
+        .jetbrains-mono-regular {
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+
+<body class="jetbrains-mono-regular">
+
+<div class="prose text-primary prose-headings:underline prose-a:text-secondary prose-xl max-w-5xl mx-auto border border-base-300 p-4 m-4">
+    {{ html|safe }}
+</div>
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
