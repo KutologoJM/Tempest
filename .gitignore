@@ -157,3 +157,4 @@ node_modules/
 dist
 build
 /Tempest/static/css/tailwindcss
+/Tempest/staticfiles/
