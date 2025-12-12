@@ -1,0 +1,99 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" data-theme="space">
+<head>
+    <link href="{% static "css/output.css" %}" rel="stylesheet" type="text/css"/>
+
+    <meta charset="UTF-8">
+    <title>Documentation Root</title>
+    <link href="https://fonts.cdnfonts.com/css/jetbrains-mono" rel="stylesheet">
+
+    <style>
+        .jetbrains-mono-regular {
+            font-family: "JetBrains Mono", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+    </style>
+
+</head>
+
+<body class="jetbrains-mono-regular">
+
+<section class=" grid grid-cols-1 md:grid-cols-2 max-w-5xl mx-auto p-4 m-4 gap-4">
+
+    {% for variable in model_doc.all %}
+        <div class="card bg-base-100 border prose prose-xl">
+            <div class="card-body">
+                <h1 class="mb-0 mt-0 text-center">
+                    {{ variable.variable_name }}
+                </h1>
+
+                <ul class="text-accent text-lg">
+                    <li>
+                        {% if variable.variable_is_required %}
+                            <span class="badge badge-warning">required</span>
+                        {% elif not variable.variable_is_required %}
+                            <span class="badge badge-info">Optional</span>
+                        {% else %}
+                            <div role="alert" class="alert alert-error">
+                                Error
+                            </div>
+                        {% endif %}
+                    </li>
+                    <li>
+                        <div class="tooltip">
+                            {{ variable.model_field.field_name }}
+                            <div class="tooltip-content">
+                                {{ variable.model_field.field_description }}
+                            </div>
+                        </div>
+
+                        {% if variable.field_arguments.all %}
+                            <ul>
+
+                                {% for arg in variable.argument_pairs.all %}
+                                    <li>
+                                        <div class="tooltip">
+
+                                            {{ arg.field_argument.argument_name }} = {{ arg.argument_value }}
+                                            <div class="tooltip-content">
+                                                <p class="font-bold text-xl">
+                                                    {{ arg.argument_value_description }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+                        {% elif not variable.field_arguments.all %}
+                            <p>
+                                NO arguments
+                            </p>
+                        {% else %}
+                            <div role="alert" class="alert alert-error">
+                                Error
+                            </div>
+                        {% endif %}
+
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    {% endfor %}
+</section>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
