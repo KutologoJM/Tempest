@@ -17,7 +17,9 @@ dependencies = [
     "gunicorn (>=23.0.0,<24.0.0)",
     "whitenoise (>=6.11.0,<7.0.0)",
     "httpx (>=0.28.1,<0.29.0)",
-    "markdown (>=3.10,<4.0)"
+    "markdown (>=3.10,<4.0)",
+    "django-browser-reload (>=1.21.0,<2.0.0)",
+    "django-watchfiles (>=1.4.0,<2.0.0)",
 ]
 
 

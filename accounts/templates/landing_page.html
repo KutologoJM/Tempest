@@ -1,0 +1,213 @@
+{% extends "global_default.html" %}
+{% load static %}
+{% block title %}Home{% endblock %}
+{% block extra_head_element %} {% endblock %}
+{% block navbar_title %}Homepage{% endblock %}
+
+{% block page_content %}
+    <main class="prose grid grid-cols-1 max-w-6xl mx-auto">
+
+        <section class="text-center p-4">
+
+            <div class="avatar mb-4">
+                <div class="w-96 rounded-full">
+                    <img src="{% static 'images/avatar.jpg' %}" alt="profile picture">
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section class="w-max border rounded-2xl p-4 mx-auto">
+            <h1 class="text-center mt-2 mb-2">
+                Contact Information: <i class="fa-regular fa-address-book"></i>
+            </h1>
+
+            <h3 class="mt-4 mb-0 text-center">
+                <i class="fa-regular fa-address-card"></i>
+                Kutologo Jezra Mashego - he/him
+            </h3>
+            <h4 class="text-center">
+                <i class="fa-solid fa-location-dot"></i>
+                Pretoria Metropolitan Area, South Africa
+            </h4>
+            <div class="font-bold text-xl p-4 m-4">
+
+                <div>Business Email:</div>
+                <a href="" class="btn btn-link btn-xl">
+                    kutologojm@jezrastudio.online
+                    <i class="fa-solid fa-paper-plane"></i>
+                </a>
+                <div>Feedback Form:</div>
+                <a href="" class="btn btn-link btn-xl">
+                    Google Docs
+                    <i class="fa-brands fa-google"></i>
+                </a>
+                <div>Github Profile:</div>
+                <a href="" class="btn btn-link btn-xl">
+                    KutologoJM
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <div>LinkedIn Profile:</div>
+                <a href="" class="btn btn-link btn-xl">
+                    kutologomashego
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+            </div>
+        </section>
+
+
+        <section>
+            <div class="inline-block  rounded-2xl p-4 text-left">
+                <h2 id="about-me" class="mb-2 mt-2 text-center">
+                    About Me: <i class="fa-regular fa-user"></i>
+                </h2>
+                <div class="pl-5">
+                    <ul class=" list-disc list-inside font-mono text-lg">
+                        <li>
+                            My main goal is to be able to build full-stack web apps using Django.
+                        </li>
+                        <li>
+                            I have practiced python scripting since leaving high-school. I picked up Django to be able
+                            to add a GUI
+                            element to my scripts and have grown to quite enjoy building web apps.
+                        </li>
+                        <li>
+                            I primarily focus on building projects around video games I play, primarily management sims
+                            as they feature a
+                            lot of planning that transitions very well to Inventory Asset Management Systems which
+                            python is quite accomodating to.
+                        </li>
+                        <li>
+                            I learned html in high-school but had more of a fascination with python and backend
+                            architecture, as thus most
+                            of my capabilities are primarily backend focused but I hope to have my frontend skills
+                            improve so I can be a well
+                            rounded full-stack dev.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="p-4 m-4">
+            <h2 class="text-center mb-2 mt-2">
+                Tech Stack <i class="fa-solid fa-computer"></i>
+            </h2>
+            <table class="text-2xl">
+                <!-- head -->
+                <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Tools</th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <!-- row 1 -->
+                <tr>
+                    <td>Backend</td>
+                    <td>Python · Django · Django Rest Framework</td>
+                </tr>
+                <!-- row 2 -->
+                <tr>
+                    <td>Frontend</td>
+                    <td>HTML · CSS · Tailwindcss · Nuxt.js · Vue.js</td>
+                </tr>
+                <!-- row 3 -->
+                <tr>
+                    <td>Database</td>
+                    <td>PostgreSQL · SQLite</td>
+                </tr>
+                <!-- row 4 -->
+                <tr>
+                    <td>Tooling</td>
+                    <td>Render · Cloudflare · Linux</td>
+                </tr>
+                <!-- row 5 -->
+                <tr>
+                    <td>Misc</td>
+                    <td> JIRA · Confluence · Notion</td>
+                </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <section>
+            <h2 id="active-projects" class="text-center mb-2 mt-2">
+                Active Projects
+            </h2>
+            <div class=" grid grid-cols-1 lg:grid-cols-2 gap-3 p-4">
+
+                <div class="card w-full shadow-sm bg-base-200">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a
+                                    href="https://github.com/KutologoJM/tempest"
+                                    class="link">
+                                Tempest
+                            </a>
+                            <span class="badge badge-primary">Django / Python</span>
+                        </h2>
+                        <p>A collection of small apps that form my coding playground where I can have fun while
+                            still being
+                            productive.</p>
+                    </div>
+                </div>
+
+                <div class="card w-full shadow-sm bg-base-200">
+                    <div class="card-body">
+                        <h2 class="card-title">
+                            <a
+                                    href="https://github.com/KutologoJM/oni-utility-suite"
+                                    class="link">
+                                oni-utility-suite
+                            </a>
+                            <span class="badge badge-primary">DRF / Python</span>
+                        </h2>
+                        <p>My current main project. A suite of scripts, calculators and tools for Oxygen Not
+                            Included built in
+                            Django.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="text-center p-6">
+
+            <div class="inline-block  rounded-2xl p-4 text-left">
+                <h2 class="text-center mb-2 mt-2">Support Me <i class="fa-solid fa-piggy-bank"></i></h2>
+                <p class="mb-6">
+                    If you like my work, you can support me by buying me a coffee or donating.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a
+                            href="https://www.buymeacoffee.com/kutologojm"
+                            target="_blank"
+                            class="btn btn-warning no-underline">
+                        <i class="fa-solid fa-pizza-slice"></i>
+                        Buy Me a Coffee
+                    </a>
+                    <a
+                            href="https://paypal.me/KutologoMashego"
+                            target="_blank"
+                            class="btn btn-secondary no-underline">
+                        <i class="fa-brands fa-paypal"></i>
+                        Donate via PayPal
+
+                    </a>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+{% endblock %}
+
+{% block extra_scripts %}{% endblock %}
