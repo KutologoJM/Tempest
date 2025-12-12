@@ -37,3 +37,6 @@ class CustomResetDone(auth_views.PasswordResetCompleteView): pass
 
 class CustomProfileView(TemplateView):
     template_name = "user/profile.html"
+
+class LandingPageView(TemplateView):
+    template_name = "landing_page.html"
