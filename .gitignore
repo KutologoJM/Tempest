@@ -148,6 +148,7 @@ do_not_commit.html
 # Temporary
 # -------------------
 Tempest/old_settings.py
+portfolio/
 
 
 # Dependency directories

@@ -1,10 +1,10 @@
-{% extends "base.html" %}
+{% extends "global_default.html" %}
 {% block title %}Profile{% endblock %}
 {% block extra_head_element %} {% endblock %}
 {% block navbar_title %}User Profile{% endblock %}
 
 {% block page_content %}
-    Hello World
+    Hello {{ user }}
 {% endblock %}
 
 {% block extra_scripts %}{% endblock %}
